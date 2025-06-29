@@ -32,8 +32,9 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteUser")
-    public String deleteUser(){
-        return "User Deleted!";
+//    because the service returns a boolean type
+    public Boolean deleteUser(@RequestBody UserDTO userDTO){
+        return userService.deleteUser(userDTO);
     }
 
 }
