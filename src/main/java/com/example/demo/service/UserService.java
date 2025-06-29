@@ -43,4 +43,18 @@ public class UserService {
         userRepo.delete(modelMapper.map(userDTO,User.class));
         return true;
     }
+
+    //Using Native querry to filter users.
+//    User id > user details
+//    select * from user where id = 2
+    public UserDTO getUserByID(String userID){
+        User user = userRepo.getUserByID(userID);
+        return modelMapper.map(user, UserDTO.class);
+    }
+
+
+
+
+//    user id, address > user details
+//    select * from user where id=2 and address = "Oracle"
 }
