@@ -21,8 +21,8 @@ public class UserController {
     }
 
     @PutMapping("/updateUser")
-    public String updateUser(){
-       return "user Updated!";
+    public UserDTO updateUser(@RequestBody UserDTO userDTO){
+       return userService.updateUser(userDTO);
     }
 
 //    @RequestBody - JSON type data, JAVA object vaalta convert kranva
